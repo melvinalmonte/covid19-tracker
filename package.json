@@ -14,10 +14,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "country-data": "0.0.31",
     "next": "^9.3.0",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "@zeit/next-sass": "^1.0.1"
+    "react-dom": "^16.13.0"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.12.1",

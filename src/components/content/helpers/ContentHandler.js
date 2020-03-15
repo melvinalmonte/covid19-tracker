@@ -4,6 +4,7 @@ import axios from "axios";
 const ContentHandler = country => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
+  const [err, setErr] = useState(false);
 
   const fetchCases = async country => {
     const url =
@@ -14,25 +15,17 @@ const ContentHandler = country => {
       .get(url)
       .then(response => {
         setLoading(false);
+        setErr(false)
         setData(response.data);
       })
       .catch(() => {
-        setData({
-          confirmed: {
-            value: 0
-          },
-          recovered: {
-            value: 0
-          },
-          deaths: {
-            value: 0
-          }
-        });
+        setErr(true);
       });
   };
   return {
     data,
     loading,
+    err,
     fetchCases
   };
 };
