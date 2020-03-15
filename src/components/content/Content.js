@@ -19,7 +19,7 @@ const Content = props => {
               <div className="level-item has-text-centered">
                 <div>
                   {console.log(country)}
-                  <p className="title">"No COVID19 records found for {countries[country].name}"</p>
+                  <p className="title has-text-warning">"No COVID19 records found in {countries[country].name}."</p>
                 </div>
               </div>
             ) : (
