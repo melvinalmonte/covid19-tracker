@@ -1,4 +1,3 @@
-import "../styles/styles.scss";
 import { NavBar } from "../components/navbar";
 import { Content } from "../components/content";
 import { Dropdown } from "../components/dropdown";
@@ -13,10 +12,13 @@ const index = () => {
     fetchCases(country);
   }, [country]);
   return (
-    <div className="app">
+    <div>
       <NavBar />
-      <Dropdown selectCountry={countryHandler} />
-      <Content loading={loading} data={data} />
+      <div className="app columns is-vcentered">
+        <div className="column is-12">
+        <Content loading={loading} data={data} selectCountry={countryHandler} />
+        </div>
+      </div>
     </div>
   );
 };

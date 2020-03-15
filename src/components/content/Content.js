@@ -1,44 +1,37 @@
 import { Dropdown } from "../dropdown";
 
 const Content = props => {
-  const { loading, data } = props;
+  const { loading, data, selectCountry } = props;
   return (
-    <div className="container">
-      <div className="columns is-centered cases-content">
-        {loading ? (
-          <h1 className="title">Loading Data</h1>
-        ) : (
-          <div className="column is-3 has-text-centered">
-            {Object.entries(data)
-              .slice(0, 3)
-              .map(([k, v]) => {
-                switch (k) {
-                  case "confirmed":
-                    return (
-                      <div className="notification is-warning">
-                        {k} : {v.value}
+    <section class="hero is-info is-dark is-medium">
+      <div class="hero-body">
+        <div class="container">
+          <nav class="level">
+            <div className="level-item has-text-centered">
+              <Dropdown selectCountry={selectCountry} />
+            </div>
+            {loading ? (
+              <div className="level-item has-text-centered">
+                Loading data...
+              </div>
+            ) : (
+              Object.entries(data)
+                .slice(0, 3)
+                .map(([k, v]) => {
+                  return (
+                    <div class="level-item has-text-centered">
+                      <div>
+                        <p class="heading">{k}</p>
+                        <p class="title">{v.value}</p>
                       </div>
-                    );
-                  case "recovered":
-                    return (
-                      <div className="notification is-success">
-                        {k} : {v.value}
-                      </div>
-                    );
-                  case "deaths":
-                    return (
-                      <div className="notification is-danger">
-                        {k} : {v.value}
-                      </div>
-                    );
-                  default:
-                    return <div>Action not supported</div>;
-                }
-              })}
-          </div>
-        )}
+                    </div>
+                  );
+                })
+            )}
+          </nav>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

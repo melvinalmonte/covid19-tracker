@@ -1,5 +1,5 @@
 {
-  "name": "covid19-tracker",
+  "name": "covid-19-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,9 +14,7 @@
   "dependencies": {
     "next": "^9.3.0",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "react-redux": "^7.2.0",
-    "redux": "^4.0.5"
+    "react-dom": "^16.13.0"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.12.1",
@@ -28,7 +26,6 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.0",
     "node-sass": "^4.13.1",
-    "prettier": "^1.19.1",
-    "prop-types": "^15.7.2"
+    "prettier": "^1.19.1"
   }
 }
