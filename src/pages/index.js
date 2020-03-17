@@ -7,15 +7,28 @@ import DropdownHandler from "../components/dropdown/helpers/DropdownHandler";
 import { ContentHandler } from "../components/content/helpers";
 
 const index = () => {
-  const { country, countryHandler } = DropdownHandler();
+  const {
+    country,
+    countries,
+    loadingCountries,
+    countryHandler,
+    fetchCountries
+  } = DropdownHandler();
   const { data, loading, fetchCases } = ContentHandler();
+
+  console.log(countries);
   useEffect(() => {
     fetchCases(country);
+    fetchCountries();
   }, [country]);
   return (
     <div className="app">
       <NavBar />
-      <Dropdown selectCountry={countryHandler} />
+      <Dropdown
+        selectCountry={countryHandler}
+        loading={loadingCountries}
+        countries={countries}
+      />
       <Content loading={loading} data={data} />
     </div>
   );
