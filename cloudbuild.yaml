@@ -1,0 +1,8 @@
+steps:
+    - name: "gcr.io/cloud-builders/docker"
+      args: ["build", "-t", "gcr.io/melv-covid19-app/covid19-tracker", "."]
+    - name: "gcr.io/cloud-builders/docker"
+      args: ["push", "gcr.io/melv-covid19-app/covid19-tracker"]
+    - name: "gcr.io/cloud-builders/gcloud"
+      args: [ "run", "deploy", "covid19-tracker", "--image", "gcr.io/melv-covid19-app/covid19-tracker", "--region", "us-east1", "--platform", "managed", "--allow-unauthenticated", ]
+images: ["gcr.io/melv-covid19-app/covid19-tracker"]

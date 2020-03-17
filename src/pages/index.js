@@ -1,7 +1,5 @@
-import "../styles/styles.scss";
 import { NavBar } from "../components/navbar";
 import { Content } from "../components/content";
-import { Dropdown } from "../components/dropdown";
 import { useEffect } from "react";
 import DropdownHandler from "../components/dropdown/helpers/DropdownHandler";
 import { ContentHandler } from "../components/content/helpers";
@@ -9,27 +7,33 @@ import { ContentHandler } from "../components/content/helpers";
 const index = () => {
   const {
     country,
-    countries,
-    loadingCountries,
     countryHandler,
+    loadingCountries,
+    countries,
     fetchCountries
   } = DropdownHandler();
-  const { data, loading, fetchCases } = ContentHandler();
-
-  console.log(countries);
+  const { data, loading, err, fetchCases } = ContentHandler();
   useEffect(() => {
     fetchCases(country);
     fetchCountries();
   }, [country]);
+
   return (
-    <div className="app">
+    <div>
       <NavBar />
-      <Dropdown
-        selectCountry={countryHandler}
-        loading={loadingCountries}
-        countries={countries}
-      />
-      <Content loading={loading} data={data} />
+      <div className="app columns is-vcentered">
+        <div className="column is-12">
+          <Content
+            loading={loading}
+            data={data}
+            country={country}
+            selectCountry={countryHandler}
+            err={err}
+            loadingCountries={loadingCountries}
+            loadedCountries={countries}
+          />
+        </div>
+      </div>
     </div>
   );
 };
