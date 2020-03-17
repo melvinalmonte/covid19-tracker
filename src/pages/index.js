@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import DropdownHandler from "../components/dropdown/helpers/DropdownHandler";
 import { ContentHandler } from "../components/content/helpers";
 import { Footer } from "../components/footer";
+import Head from "next/head";
 
 const index = () => {
   const {
@@ -21,6 +22,14 @@ const index = () => {
 
   return (
     <div>
+      <Head>
+        <title>Melv's COVID19 Tracker</title>
+        <meta
+          name="viewport"
+          content="initial-scale=1.0, width=device-width"
+          key="viewport"
+        />
+      </Head>
       <NavBar />
       <div className="app columns is-vcentered">
         <div className="column is-12">
