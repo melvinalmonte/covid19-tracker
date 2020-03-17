@@ -1,15 +1,27 @@
 import { Dropdown } from "../dropdown";
-import {countries} from 'country-data';
+import { countries } from "country-data";
 
 const Content = props => {
-  const { loading, data, err, selectCountry, country } = props;
+  const {
+    loading,
+    data,
+    err,
+    selectCountry,
+    country,
+    loadingCountries,
+    loadedCountries
+  } = props;
   return (
     <section className="hero is-info is-dark is-medium">
       <div className="hero-body">
         <div className="container">
           <nav className="level">
             <div className="level-item has-text-centered">
-              <Dropdown selectCountry={selectCountry} />
+              <Dropdown
+                selectCountry={selectCountry}
+                loadingCountries={loadingCountries}
+                countries={loadedCountries}
+              />
             </div>
             {loading ? (
               <div className="level-item has-text-centered">
@@ -19,7 +31,9 @@ const Content = props => {
               <div className="level-item has-text-centered">
                 <div>
                   {console.log(country)}
-                  <p className="title has-text-warning">"No COVID19 records found in {countries[country].name}."</p>
+                  <p className="title has-text-warning">
+                    "No COVID19 records found in {countries[country].name}."
+                  </p>
                 </div>
               </div>
             ) : (

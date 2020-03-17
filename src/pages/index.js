@@ -5,10 +5,17 @@ import DropdownHandler from "../components/dropdown/helpers/DropdownHandler";
 import { ContentHandler } from "../components/content/helpers";
 
 const index = () => {
-  const { country, countryHandler } = DropdownHandler();
+  const {
+    country,
+    countryHandler,
+    loadingCountries,
+    countries,
+    fetchCountries
+  } = DropdownHandler();
   const { data, loading, err, fetchCases } = ContentHandler();
   useEffect(() => {
     fetchCases(country);
+    fetchCountries();
   }, [country]);
 
   return (
@@ -22,6 +29,8 @@ const index = () => {
             country={country}
             selectCountry={countryHandler}
             err={err}
+            loadingCountries={loadingCountries}
+            loadedCountries={countries}
           />
         </div>
       </div>
