@@ -3,6 +3,7 @@ import { Content } from "../components/content";
 import { useEffect } from "react";
 import DropdownHandler from "../components/dropdown/helpers/DropdownHandler";
 import { ContentHandler } from "../components/content/helpers";
+import { Footer } from "../components/footer";
 
 const index = () => {
   const {
@@ -34,6 +35,7 @@ const index = () => {
           />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
