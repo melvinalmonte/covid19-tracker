@@ -9,7 +9,7 @@ const Dropdown = props => {
           <option value="loading">Loading Countries</option>
         ) : (
           Object.entries(countries).map(([k, v]) => {
-            return <option value={v}>{k}</option>;
+            return <option value={v.iso2}>{v.name}</option>;
           })
         )}
       </select>
