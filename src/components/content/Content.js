@@ -38,13 +38,12 @@ const Content = props => {
               </div>
             ) : (
               Object.entries(data)
-                .slice(0, 3)
                 .map(([k, v]) => {
                   return (
                     <div className="level-item has-text-centered">
                       <div>
                         <p className="heading">{k}</p>
-                        <p className="title">{v.value}</p>
+                        <p className="title">{v}</p>
                       </div>
                     </div>
                   );

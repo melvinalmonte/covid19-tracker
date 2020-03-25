@@ -14,7 +14,7 @@ const index = () => {
     countries,
     fetchCountries
   } = DropdownHandler();
-  const { data, loading, err, fetchCases } = ContentHandler();
+  const { data, updated, loading, err, fetchCases } = ContentHandler();
   useEffect(() => {
     fetchCases(country);
     fetchCountries();
@@ -44,7 +44,7 @@ const index = () => {
           />
         </div>
       </div>
-      <Footer />
+      <Footer lastUpdated={updated} />
     </div>
   );
 };
