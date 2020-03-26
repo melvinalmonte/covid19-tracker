@@ -20,6 +20,8 @@ const index = () => {
     fetchCountries();
   }, [country]);
 
+
+
   return (
     <div>
       <Head>

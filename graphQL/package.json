@@ -1,0 +1,19 @@
+{
+  "name": "graphql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "resolvers.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/react-hooks": "^3.1.3",
+    "apollo-boost": "^0.4.7",
+    "apollo-server": "^2.11.0",
+    "axios": "^0.19.2",
+    "graphql": "^14.6.0"
+  }
+}
