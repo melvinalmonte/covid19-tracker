@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const ContentHandler = country => {
+const ContentHandler = () => {
   const [data, setData] = useState({
     confirmed: null,
     recovered: null,
@@ -20,7 +20,6 @@ const ContentHandler = country => {
       .get(url)
       .then(response => {
         const res = response.data;
-        console.log(res)
         setLoading(false);
         setErr(false);
         setData({

@@ -29,6 +29,7 @@ const index = () => {
           content="initial-scale=1.0, width=device-width"
           key="viewport"
         />
+        <link rel="shortcut icon" href="/virus.svg" />
       </Head>
       <NavBar />
       <div className="app columns is-vcentered">
