@@ -6,7 +6,7 @@ const Footer = props => {
     <footer className="footer">
       <div className="content has-text-centered">
         <p>
-          This data was last updated <code>{lastUpdate}</code>
+          Last updated <code>{lastUpdate}</code>
         </p>
         <p>
           Built with data from <strong>mathdroid </strong>{" "}
