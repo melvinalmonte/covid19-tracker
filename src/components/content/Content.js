@@ -41,7 +41,9 @@ const Content = (props) => {
                   <div className="level-item has-text-centered">
                     <div>
                       <p className="heading">{location}</p>
-                      <p className="title">{cases.toLocaleString()}</p>
+                      <p className="title">
+                        {cases ? cases.toLocaleString() : "Error: Cases null"}
+                      </p>
                     </div>
                   </div>
                 );
