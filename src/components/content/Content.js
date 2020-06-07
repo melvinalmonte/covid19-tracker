@@ -1,7 +1,7 @@
 import { Dropdown } from "../dropdown";
 import { countries } from "country-data";
 
-const Content = props => {
+const Content = (props) => {
   const {
     loading,
     data,
@@ -9,7 +9,7 @@ const Content = props => {
     selectCountry,
     country,
     loadingCountries,
-    loadedCountries
+    loadedCountries,
   } = props;
   return (
     <section className="hero is-info is-dark is-medium">
@@ -30,24 +30,22 @@ const Content = props => {
             ) : err ? (
               <div className="level-item has-text-centered">
                 <div>
-                  {console.log(country)}
                   <p className="title has-text-warning">
                     "No COVID19 records found in {countries[country].name}."
                   </p>
                 </div>
               </div>
             ) : (
-              Object.entries(data)
-                .map(([k, v]) => {
-                  return (
-                    <div className="level-item has-text-centered">
-                      <div>
-                        <p className="heading">{k}</p>
-                        <p className="title">{v}</p>
-                      </div>
+              Object.entries(data).map(([location, cases]) => {
+                return (
+                  <div className="level-item has-text-centered">
+                    <div>
+                      <p className="heading">{location}</p>
+                      <p className="title">{cases.toLocaleString()}</p>
                     </div>
-                  );
-                })
+                  </div>
+                );
+              })
             )}
           </nav>
         </div>
